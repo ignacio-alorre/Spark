@@ -20,8 +20,6 @@ originalDF.show(false)
 +---+--------+----------------------------------------------------------------+
 */
 
-
-
 val firstElementDF = originalDF.withColumn("first_score", when(col("scores").isNotNull,col("scores").getItem(0)).otherwise(null))  
 
 firstElementDF.show(false)
@@ -35,9 +33,7 @@ firstElementDF.show(false)
 |3  |Franklin|[Map(score -> 12, year -> 2015), Map(score -> 25, year -> 2016)]|Map(score -> 12, year -> 2015)|
 |4  |Michael |null                                                            |null                          |
 +---+--------+----------------------------------------------------------------+------------------------------+
-
 */
-
 
 val firstElementYearDF = originalDF.withColumn("first_score_year", when(col("scores").isNotNull,col("scores").getItem(0).getItem("rank")).otherwise(null))  
 
