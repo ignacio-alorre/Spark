@@ -21,7 +21,6 @@ originalDF.show(false)
 +---+--------+------------------------------+
 */
 
-
 val rankDF = originalDF.withColumn("rank", col("scores.rank"))
 
 rankDF.show(false)
