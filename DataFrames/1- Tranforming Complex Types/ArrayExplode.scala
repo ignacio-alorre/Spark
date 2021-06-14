@@ -1,5 +1,3 @@
-
-
 case class User(id: Integer, name: String, scores: Array[Map[String, Integer]])
 
 val user1 = User(1, "Arthur", Array(Map("score" -> 5, "year" -> 2010)))
@@ -22,8 +20,6 @@ originalDF.show(false)
 +---+--------+----------------------------------------------------------------+
 */
 
-
-
 val explodedDF = originalDF.withColumn("score", explode(col("scores"))).drop("scores")
 
 explodedDF.show(false)
@@ -38,4 +34,3 @@ explodedDF.show(false)
 |3  |Franklin|Map(score -> 25, year -> 2016)|
 +---+--------+------------------------------+
 */
-
