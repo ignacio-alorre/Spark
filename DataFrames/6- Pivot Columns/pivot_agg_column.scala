@@ -40,7 +40,6 @@ pivotDF.show()
 |  1|   3|   2|
 |  2|null|   3|
 +---+----+----+
-
 */
 
 
@@ -54,5 +53,19 @@ pivotDF.show()
 +---+----+----+
 |  1| 164| 109|
 |  2|null| 158|
++---+----+----+
+*/
+
+// It is possible to define what columns should be there. 
+// For example we want to see counts for "cat2" and "cat3". Then "cat1" will not be there and "cat3" will have null values for both ids
+val pivotDF = originalDF.groupBy("id").pivot("cat").count()
+pivotDF.show()
+
+/*
++---+----+----+
+| id|cat2|cat3|
++---+----+----+
+|  1|   2|null|
+|  2|   3|null|
 +---+----+----+
 */
