@@ -31,7 +31,8 @@ originalDF_map.show(false)
 
 import scala.collection.immutable.ListMap
 
-// Sorting the map in ascending order, from first element selecting the value
+// Sorting the map in descending order
+// Then selecting first element with head and the value part of the tuple (in case we were interested on the key, it would be ._1)
 val highestValueInMap = udf((input: Map[String, Integer]) => {
 ListMap(input.toSeq.sortWith(_._2 > _._2):_*).head._2
 })
