@@ -1,5 +1,6 @@
 // Creating a Dataframe
 
+
 case class User(id: Integer, name: String, last_name : String, score: Array[Map[String, Integer]])
 
 val user1 = User(1, """Arthur:"Leader"""", "Red", Array(Map("score" -> 5, "year" -> 2010)))
@@ -19,6 +20,8 @@ originalDF.show(false)
 |3   |null             |Green    |[Map(score -> 12, year -> 2015), Map(score -> 25, year -> 2016)]|
 +----+-----------------+---------+----------------------------------------------------------------+
 */
+
+// Note the substring we are looking for contains the character ", that is why we need to wrap it within """
 
 originalDF.where(col("name").contains(""":"Leader"""")).show(false)
 
