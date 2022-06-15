@@ -5,6 +5,14 @@ Three different ways of reading a Dataframe
 * Parquet file in hdfs 
 * Hive table
 
+Note: For the avro type it may be required to add some flags and jars during the execution of the spark shell.
+* The jar is required to read avro files
+* The conf flag is required when reading avros produced by hive, since they usually come without extension
+
+spark2-shell 
+--jars spark-avro_2.11-4.0.0.jar 
+--conf spark.hadoop.avro.mapred.ignore.inputs.without.extension=false
+
 */
 
 
